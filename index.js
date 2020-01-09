@@ -9,4 +9,15 @@ function isAdult (age) {
     else return false;
 }
 
-module.exports = {isAdult};
+function sortArrayUp (array= []) {
+    for (const el of array) {
+        if ( {}.toString.call(el) !== '[object Number]' || !Number.isNaN(el) ) return 'invalid element inside the array';
+    };
+
+    if ({}.toString.call(array) !== '[object Array]') return undefined;
+    else return array.sort((a,b) => a-b)
+}
+
+
+
+module.exports = {isAdult,sortArrayUp};
