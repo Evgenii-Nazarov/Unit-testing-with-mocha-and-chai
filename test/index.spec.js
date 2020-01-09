@@ -1,6 +1,6 @@
 const assert = require ('assert');
 const {expect} = require ('chai');
-const {isAdult,sortArrayUp} = require('../index.js');
+const {isAdult,sortArrayUp,isPalindrome} = require('../index.js');
 
 describe ('testing isAdult function', () => {
 
@@ -64,7 +64,7 @@ describe ('testing sortArrayUp function', () => {
     });
 
     it('fn sortArrayUp with object argument array should be undefined', () => {
-        expect(  sortArrayUp({ a: 1, b: 2})).to.be.undefined;
+        expect(  sortArrayUp({ a: 1, b: 2} )).to.be.undefined;
     });
 
     it('fn sortArrayUp with string argument should be undefined', () => {
@@ -75,5 +75,45 @@ describe ('testing sortArrayUp function', () => {
         expect(  sortArrayUp(42130)).to.be.undefined;
     });
 
+
+});
+
+describe ('testing isPalindrome function', () => {
+
+   it('fn isPalindrome with aba should be true', () => {
+      expect( isPalindrome('aba') ).to.be.true;
+    });
+
+    it('fn isPalindrome with abbaa should be false', () => {
+        expect( isPalindrome('abbaa') ).to.be.false;
+    });
+
+    it('fn isPalindrome with 121 argument should be true', () => {
+        expect( isPalindrome(121) ).to.be.true;
+    })
+
+    it('fn isPalindrome with 123 argument should be false', () => {
+        expect( isPalindrome(123) ).to.be.false;
+    });
+
+    it('fn isPalindrome with Array argument should be error', () => {
+        expect( isPalindrome(['aba']) ).to.be.equal('Wrong argument');
+    });
+
+    it('fn isPalindrome with Object argument should be error', () => {
+        expect( isPalindrome({word:'aba'}) ).to.be.equal('Wrong argument');
+    });
+
+    it('fn isPalindrome with NaN argument should be error', () => {
+        expect( isPalindrome(NaN) ).to.be.equal('Wrong argument');
+    });
+
+    it('fn isPalindrome with Null argument should be error', () => {
+        expect( isPalindrome(null) ).to.be.equal('Wrong argument');
+    });
+
+    it('fn isPalindrome with Undefined argument should be error', () => {
+        expect( isPalindrome(undefined) ).to.be.equal('Wrong argument');
+    });
 
 });

@@ -10,14 +10,27 @@ function isAdult (age) {
 }
 
 function sortArrayUp (array= []) {
-    for (const el of array) {
-        if ( {}.toString.call(el) !== '[object Number]' || !Number.isNaN(el) ) return 'invalid element inside the array';
-    };
 
     if ({}.toString.call(array) !== '[object Array]') return undefined;
-    else return array.sort((a,b) => a-b)
+
+    for (const el of array) {
+        if ( {}.toString.call(el) !== '[object Number]' || Number.isNaN(el) ) return 'invalid element inside the array';
+    };
+
+    return array.sort((a,b) => a-b)
 }
 
+function isPalindrome (word) {
 
+    if ( Number.isNaN(word) ) return 'Wrong argument';
 
-module.exports = {isAdult,sortArrayUp};
+    if ( typeof(word) === 'number' ) {
+        return String(word) === String(word).split('').reverse().join('')
+    }
+
+    if ({}.toString.call(word) !== '[object String]') return 'Wrong argument';
+
+    return word === word.split('').reverse().join('')
+}
+
+module.exports = {isAdult,sortArrayUp,isPalindrome};
