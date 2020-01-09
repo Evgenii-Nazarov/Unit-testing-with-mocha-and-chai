@@ -3,7 +3,7 @@
 ##### I used the most popular js testing framework _**Mocha**_ and library _**Chai**_. I used the expect style
 
 
-######Table of used chainable getters i used to  improve the readability of my assertions
+###### Table of used chainable getters i used to  improve the readability of my assertions
 
 chainable getters | explanation
 ------------ | -------------
